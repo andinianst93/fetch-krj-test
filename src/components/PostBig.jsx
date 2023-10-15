@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import parse from 'html-react-parser'
 const PostBig = ({ yoast_head_json, title, excerpt, date, id }) => {
+  console.log(title);
   return (
     <article className='max-w-xl md:pt-8 pt-4'>
-      <Link to={`/post/${id}`}>
+      <Link to={`/${id}`}>
         {yoast_head_json.og_image.map((i, index) => {
           return (
             <img
@@ -22,11 +23,11 @@ const PostBig = ({ yoast_head_json, title, excerpt, date, id }) => {
             {yoast_head_json.og_type}
           </p>
         </div>
-        <Link to='#'>
           <h5 className='mb-2 md:text-2xl text-lg text-left font-bold text-gray-900 tracking-wide'>
-            {title.rendered}
+          <Link to={`/${id}`}>
+              {title.rendered}
+            </Link>
           </h5>
-        </Link>
         <div className='mb-3 md:text-base text-sm font-normal text-gray-700 dark:text-gray-600 text-left line-clamp-2'>
           {parse(`${excerpt?.rendered}`)}
         </div>

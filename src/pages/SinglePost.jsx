@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import parse from 'html-react-parser'
-
 const SinglePost = () => {
   const { id } = useParams()
   const [loading, setLoading] = useState(false)
@@ -26,10 +25,16 @@ const SinglePost = () => {
   }, [])
   const { title, content } = singleArticle
   return (
-    <div className='text-white'>
-      <h1 className='text-4xl font-bold mb-4'>{title?.rendered}</h1>
-      <article className='text-left'>{parse(`${content?.rendered}`)}</article>
-    </div>
+    <>
+      <div className='text-left text-blue-800'>
+        <Link to={'/'}>Go back to all posts</Link>
+      </div>
+      <main className='text-gray-900 py-8 flex flex-col items-center justify-center'>
+        <h1 className='text-4xl font-bold mb-8'>{title?.rendered}</h1>
+        <article className='prose lg:prose-lg max-w-4xl prose-img:mx-auto'>{parse(`${content?.rendered}`)}</article>
+      </main>
+    </>
+
   )
 }
 

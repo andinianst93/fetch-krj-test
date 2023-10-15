@@ -8,9 +8,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/post' element={<Post />}></Route>
-        <Route path='post/:id' element={<SinglePost />} />
+        <Route path='/' element={<Post />}></Route>
+        <Route path='/:id' element={<SinglePost />} />
       </Routes>
     </BrowserRouter>
   )

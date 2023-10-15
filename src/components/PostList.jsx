@@ -9,6 +9,7 @@ const PostList = () => {
   return (
     <section>
       <div className='py-8 px-4 mx-auto'>
+        <h1 className='text-3xl font-bold mb-8'>All Posts</h1>
         <div className='space-y-8 grid md:gap-8 lg:grid-cols-2 sm:gap-6 xl:gap-8 lg:space-y-0'>
           {bigArt.map((item, index) => {
             return <PostBig key={index} {...item} />

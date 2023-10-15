@@ -23,7 +23,7 @@ const PostOne = ({ yoast_head_json, title, excerpt, date, id }) => {
             {yoast_head_json.og_type}
           </p>
         </div>
-        <Link to='#'>
+        <Link to={`/post/${id}`}>
           <h5 className='mb-2 tracking-wide md:text-2xl text-lg text-left font-bold text-gray-900'>
             {title.rendered}
           </h5>
