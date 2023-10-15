@@ -5,7 +5,7 @@ import parse from 'html-react-parser'
 const PostOne = ({ yoast_head_json, title, excerpt, date, id }) => {
   return (
     <article className='max-w-sm md:pt-8 pt-4'>
-      <Link to={`/post/${id}`}>
+      <Link to={`/${id}`}>
         {yoast_head_json.og_image.map((i, index) => {
           return (
             <img
@@ -23,7 +23,7 @@ const PostOne = ({ yoast_head_json, title, excerpt, date, id }) => {
             {yoast_head_json.og_type}
           </p>
         </div>
-        <Link to={`/post/${id}`}>
+        <Link to={`/${id}`}>
           <h5 className='mb-2 tracking-wide md:text-2xl text-lg text-left font-bold text-gray-900'>
             {title.rendered}
           </h5>
